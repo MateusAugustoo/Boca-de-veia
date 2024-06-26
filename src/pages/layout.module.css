@@ -1,0 +1,8 @@
+.layout {
+  background: var(--slate-900);
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}

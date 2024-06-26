@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border: .1rem solid var(--slate-400);
+  border-radius: .8rem;
+
+  width: 32.3rem;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+
+  padding: 1.2rem;
+}
+
+.card__icon {
+  font-size: 3.4rem;
+}
+
+.card__category {
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  text-transform: capitalize;
+}
+
+.message {
+  color: var(--slate-50);
+}
+
+.warning {
+  color: var(--red-600);
+}
+
+.suggestion { 
+  color: var(--yellow-600);
+}
+
+.question {
+  color: var(--pink-600);
+}
+
+.container__content {
+  display: flex;
+  gap: .4rem;
+  flex-direction: column;
+
+  padding: 0 1.2rem 1.2rem;
+}
+
+.container__content p {
+  font-size: 1.6rem;
+  line-clamp: 3;
+}
+
+.container__content time {
+  font-size: 1.3rem;
+  font-style: italic;
+
+  color: var(--slate-400);
+}
