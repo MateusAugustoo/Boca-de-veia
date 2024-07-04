@@ -1,0 +1,57 @@
+.form__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+
+  padding: 0 2rem;
+}
+
+.from__group {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+
+  width: 100%;
+}
+
+select {
+  padding: 1rem;
+  border-radius: .4rem;
+
+  background: transparent;
+}
+
+option {
+ background: var(--slate-900);
+ 
+ padding: .4rem 0;
+}
+
+input {
+  height: 4rem;
+  border-radius: .4rem;
+  border: 1px solid var(--slate-100);
+
+  padding: 0 .8rem;
+
+  background: transparent;
+}
+
+button {
+  padding: 1rem 4rem;
+  border: none;
+
+  border-radius: .4rem;
+
+  background-color: var(--slate-300);
+  color: var(--slate-900);
+
+  font-weight: 700;
+  font-size: small;
+}
+
+button:active {
+  background-color: var(--slate-500);
+  color: var(--slate-50);
+}
