@@ -37,7 +37,7 @@ export const Write = () => {
       <div className={style.from__group}>
         <label htmlFor='message'>Mensagem</label>
         <input 
-          {...register('mensagem')} placeholder='Mensagem' id='message'/>
+          {...register('message')} placeholder='Mensagem' id='message'/>
       </div>
 
       <button type='submit'>Enviar</button>
