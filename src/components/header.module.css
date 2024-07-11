@@ -13,12 +13,12 @@
   justify-content: center;
 }
 
-.logo__img {
-  width: 4rem;
+.header__logo:nth-child(1) {
+  font-size: 4rem;
 }
 
-.header__logo p {
-  font-size: 2.4rem;
+.title__logo {
+  font-size: 3.6rem;
   font-weight: 700;
   text-transform: capitalize;
 }

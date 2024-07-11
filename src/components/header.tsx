@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import style from './header.module.css';
-import armario from '../assets/armario.png';
 import { Link } from 'react-router-dom';
 
 export const Header = () => {
@@ -10,8 +9,8 @@ export const Header = () => {
     <header>
       <div className={style.header__container}>
         <div className={style.header__logo}>
-          <img className={style.logo__img} src={armario} alt="armario" />
-          <p>Mensagens anonimas</p>
+          <p>💭💣💥</p>
+          <p className={style.title__logo}>boca de veia</p>
         </div>
 
         <nav className={style.nav__container}>

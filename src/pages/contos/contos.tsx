@@ -1,10 +1,42 @@
+import { useState, useEffect } from 'react'
 import style from './contos.module.css'
+import { ConstosProps } from '../../interface/contosI'
+import { Card } from '../../components/card'
+
+import { collection, getDocs } from 'firebase/firestore'
+import { db } from '../../firebase/firebase.connect'
 
 export const Contos = () => {
+
+  const [contos, setContos] = useState<ConstosProps[]>([])
+  useEffect(() => {
+    const getContos = async () => {
+      const querySnapshot = await getDocs(collection(db, 'contos'))
+
+      const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data()
+      })) as ConstosProps[]
+
+      setContos(data)
+    }
+
+    getContos()
+  }, [])
+
+
   return (
     <section className={style.container}>
-
-      <h1>Contos</h1>
+      {contos.map((conto) => {
+        return (
+          <Card
+            key={conto.id}
+            category={conto.category}
+            message={conto.message}
+            time={conto.time}
+          />
+        )
+      })}
     </section>
   )
 }
