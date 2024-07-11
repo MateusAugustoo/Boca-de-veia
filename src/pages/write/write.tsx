@@ -9,8 +9,11 @@ export const Write = () => {
 
   const onSubmit = async (data: any) => {
     try {
+      const categoryLoweCase = data.category.toLowerCase()
+      
       await addDoc(collection(db, 'contos'), {
         ...data,
+        category: categoryLoweCase,
         time: new Date()
       })
       reset()
@@ -27,10 +30,9 @@ export const Write = () => {
         <label htmlFor="category">Tipo</label>
         <select {...register('category')} name="category" id='category'>
           <option value="null" defaultValue={'select'}>Selecione o Tipo</option>
-          <option value="Mensagem">Mensagem</option>
-          <option value="Denuncia">Denuncia</option>
-          <option value="Sugestão">Sugestão</option>
-          <option value="Fofoca">Fofoca</option>
+          <option value="Mensagem">mensagem</option>
+          <option value="Denuncia">denuncia</option>
+          <option value="Fofoca">fofoca</option>
         </select>
       </div>
 
