@@ -3,7 +3,7 @@ import style from './contos.module.css'
 import { ConstosProps } from '../../interface/contosI'
 import { Card } from '../../components/card'
 
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDocs, orderBy, query } from 'firebase/firestore'
 import { db } from '../../firebase/firebase.connect'
 
 export const Contos = () => {
@@ -11,7 +11,9 @@ export const Contos = () => {
   const [contos, setContos] = useState<ConstosProps[]>([])
   useEffect(() => {
     const getContos = async () => {
-      const querySnapshot = await getDocs(collection(db, 'contos'))
+
+      const q = query(collection(db, 'contos'), orderBy('time', 'desc'))
+      const querySnapshot = await getDocs(q)
 
       const data = querySnapshot.docs.map((doc) => ({
         id: doc.id,
