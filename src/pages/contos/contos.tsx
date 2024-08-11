@@ -12,7 +12,10 @@ export const Contos = () => {
   useEffect(() => {
     const getContos = async () => {
 
-      const q = query(collection(db, 'contos'), orderBy('time', 'desc'))
+      const q = query(
+        collection(db, 'contos'),
+        orderBy('time', 'desc')
+      )
       const querySnapshot = await getDocs(q)
 
       const data = querySnapshot.docs.map((doc) => ({
@@ -26,16 +29,17 @@ export const Contos = () => {
     getContos()
   }, [])
 
-
   return (
     <section className={style.container}>
       {contos.map((conto) => {
         return (
           <Card
+            id={conto.id}
             key={conto.id}
             category={conto.category}
             message={conto.message}
             time={conto.time}
+            like={conto.like || 0}
           />
         )
       })}

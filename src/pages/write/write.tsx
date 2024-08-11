@@ -1,20 +1,23 @@
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler} from 'react-hook-form'
 import style from './write.module.css'
 import { db } from '../../firebase/firebase.connect';
 import { addDoc, collection } from 'firebase/firestore';
+import { FormData } from '../../interface/formI';
+
 
 export const Write = () => {
 
-  const { register, handleSubmit, reset } = useForm()
+  const { register, handleSubmit, reset } = useForm<FormData>()
 
-  const onSubmit = async (data: any) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       const categoryLoweCase = data.category.toLowerCase()
       
       await addDoc(collection(db, 'contos'), {
         ...data,
         category: categoryLoweCase,
-        time: new Date()
+        time: new Date(),
+        like: 0
       })
       reset()
       alert('Mensagem enviada com sucesso!')

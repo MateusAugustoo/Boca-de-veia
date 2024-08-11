@@ -64,3 +64,22 @@
 
   color: var(--slate-600);
 }
+
+.button__like {
+  background: transparent;
+  width: fit-content;
+  padding: 0;
+  cursor: pointer;
+}
+
+.card__footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__footer__likes__container {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
